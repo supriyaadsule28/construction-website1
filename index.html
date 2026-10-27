@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinstruction | Building Excellence Since 2005</title>
+  <meta name="description" content="Cinstruction - Professional construction company specializing in residential, commercial, and industrial projects. Quality builds, on time and on budget.">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #e85d04;
+      --primary-dark: #d00000;
+      --dark: #1a1a1a;
+      --gray: #2d2d2d;
+      --light-gray: #f5f5f5;
+      --text: #333;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4, h5, .display-font {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    /* ========== NAVBAR ========== */
+    .navbar {
+      background: rgba(26, 26, 26, 0.95) !important;
+      backdrop-filter: blur(10px);
+      padding: 0.8rem 0;
+      transition: all 0.3s ease;
+    }
+    
+    .navbar.scrolled {
+      padding: 0.5rem 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    
+    .navbar-brand {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: #fff !important;
+      letter-spacing: 2px;
+    }
+    
+    .navbar-brand span {
+      color: var(--primary);
+    }
+    
+    .nav-link {
+      color: #ddd !important;
+      font-weight: 500;
+      font-size: 0.95rem;
+      margin: 0 0.4rem;
+      transition: color 0.3s;
+      position: relative;
+    }
+    
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--primary) !important;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: all 0.3s;
+      transform: translateX(-50%);
+    }
+    
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 70%;
+    }
+    
+    .btn-quote {
+      background: var(--primary);
+      color: #fff !important;
+      border: none;
+      padding: 0.5rem 1.4rem;
+      font-weight: 600;
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+    
+    .btn-quote:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(232, 93, 4, 0.4);
+    }
+    
+    /* ========== HERO ========== */
+    .hero {
+      height: 100vh;
+      min-height: 650px;
+      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.55)),
+                  url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      position: relative;
+    }
+    
+    .hero-content {
+      max-width: 750px;
+    }
+    
+    .hero-badge {
+      display: inline-block;
+      background: rgba(232, 93, 4, 0.2);
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 0.4rem 1rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero h1 span {
+      color: var(--primary);
+    }
+    
+    .hero p {
+      font-size: 1.15rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+      max-width: 550px;
+    }
+    
+    .hero-btns .btn {
+      padding: 0.75rem 1.8rem;
+      font-weight: 600;
+      border-radius: 4px;
+      margin-right: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .btn-primary-custom {
+      background: var(--primary);
+      border: 2px solid var(--primary);
+      color: #fff;
+    }
+    
+    .btn-primary-custom:hover {
+      background: transparent;
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    
+    .btn-outline-custom {
+      background: transparent;
+      border: 2px solid #fff;
+      color: #fff;
+    }
+    
+    .btn-outline-custom:hover {
+      background: #fff;
+      color: var(--dark);
+    }
+    
+    /* Stats bar */
+    .stats-bar {
+      background: var(--dark);
+      padding: 2.5rem 0;
+      margin-top: -60px;
+      position: relative;
+      z-index: 10;
+      border-radius: 8px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    }
+    
+    .stat-item {
+      text-align: center;
+      color: #fff;
+    }
+    
+    .stat-item h3 {
+      font-size: 2.4rem;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+    }
+    
+    .stat-item p {
+      font-size: 0.95rem;
+      color: #aaa;
+      margin: 0;
+    }
+    
+    /* ========== SECTION COMMON ========== */
+    section {
+      padding: 5rem 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+    }
+    
+    .section-title p {
+      color: #666;
+      max-width: 600px;
+      margin: 1.5rem auto 0;
+    }
+    
+    /* ========== ABOUT ========== */
+    .about-img {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+    
+    .about-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    
+    .about-img:hover img {
+      transform: scale(1.05);
+    }
+    
+    .about-content h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    
+    .about-content p {
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+    
+    .feature-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .feature-list li {
+      padding: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    
+    .feature-list i {
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+    
+    /* ========== SERVICES ========== */
+    .services {
+      background: var(--light-gray);
+    }
+    
+    .service-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 2rem;
+      height: 100%;
+      transition: all 0.3s;
+      border: 1px solid transparent;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+      border-color: var(--primary);
+    }
+    
+    .service-icon {
+      width: 70px;
+      height: 70px;
+      background: rgba(232, 93, 4, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      color: var(--primary);
+      transition: all 0.3s;
+    }
+    
+    .service-card:hover .service-icon {
+      background: var(--primary);
+      color: #fff;
+    }
+    
+    .service-card h4 {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+    }
+    
+    .service-card p {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    
+    /* ========== PROJECTS ========== */
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      height: 280px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .project-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    
+    .project-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 60%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    
+    .project-card:hover img {
+      transform: scale(1.1);
+    }
+    
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+    
+    .project-overlay h5 {
+      color: #fff;
+      margin-bottom: 0.3rem;
+    }
+    
+    .project-overlay span {
+      color: var(--primary);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    
+    /* ========== WHY US ========== */
+    .why-us {
+      background: var(--dark);
+      color: #fff;
+    }
+    
+    .why-us .section-title h2 {
+      color: #fff;
+    }
+    
+    .why-us .section-title p {
+      color: #aaa;
+    }
+    
+    .why-card {
+      text-align: center;
+      padding: 2rem 1.5rem;
+    }
+    
+    .why-icon {
+      width: 80px;
+      height: 80px;
+      background: rgba(232, 93, 4, 0.15);
+      border: 2px solid var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 2rem;
+      color: var(--primary);
+    }
+    
+    .why-card h4 {
+      margin-bottom: 0.8rem;
+    }
+    
+    .why-card p {
+      color: #aaa;
+      font-size: 0.95rem;
+    }
+    
+    /* ========== TEAM ========== */
+    .team-card {
+      text-align: center;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+    }
+    
+    .team-card:hover {
+      transform: translateY(-8px);
+    }
+    
+    .team-img {
+      height: 260px;
+      overflow: hidden;
+    }
+    
+    .team-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    
+    .team-card:hover .team-img img {
+      transform: scale(1.08);
+    }
+    
+    .team-info {
+      padding: 1.5rem;
+    }
+    
+    .team-info h5 {
+      margin-bottom: 0.3rem;
+    }
+    
+    .team-info span {
+      color: var(--primary);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    
+    .team-social {
+      margin-top: 1rem;
+    }
+    
+    .team-social a {
+      display: inline-flex;
+      width: 36px;
+      height: 36px;
+      background: var(--light-gray);
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      color: var(--dark);
+      margin: 0 0.25rem;
+      transition: all 0.3s;
+    }
+    
+    .team-social a:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+    
+    /* ========== TESTIMONIALS ========== */
+    .testimonials {
+      background: var(--light-gray);
+    }
+    
+    .testimonial-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 2rem;
+      height: 100%;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      position: relative;
+    }
+    
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 5rem;
+      font-family: Georgia, serif;
+      color: rgba(232, 93, 4, 0.15);
+      line-height: 1;
+    }
+    
+    .stars {
+      color: #ffc107;
+      margin-bottom: 1rem;
+    }
+    
+    .testimonial-card p {
+      color: #555;
+      font-style: italic;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    
+    .client-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .client-img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    .client-info h6 {
+      margin: 0;
+      font-weight: 600;
+    }
+    
+    .client-info small {
+      color: #888;
+    }
+    
+    /* ========== CONTACT ========== */
+    .contact-info-box {
+      background: var(--dark);
+      color: #fff;
+      border-radius: 8px;
+      padding: 2.5rem;
+      height: 100%;
+    }
+    
+    .contact-info-box h3 {
+      margin-bottom: 1.5rem;
+    }
+    
+    .contact-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .contact-item i {
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-top: 0.2rem;
+    }
+    
+    .contact-item h6 {
+      margin-bottom: 0.2rem;
+    }
+    
+    .contact-item p {
+      color: #aaa;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+    
+    .contact-form {
+      background: #fff;
+      border-radius: 8px;
+      padding: 2.5rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    }
+    
+    .contact-form .form-control,
+    .contact-form .form-select {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .contact-form .form-control:focus,
+    .contact-form .form-select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 0.2rem rgba(232, 93, 4, 0.15);
+    }
+    
+    .btn-submit {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 0.85rem 2rem;
+      font-weight: 600;
+      border-radius: 4px;
+      width: 100%;
+      transition: all 0.3s;
+    }
+    
+    .btn-submit:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+    
+    /* ========== FOOTER ========== */
+    footer {
+      background: #111;
+      color: #aaa;
+      padding: 4rem 0 2rem;
+    }
+    
+    footer h5 {
+      color: #fff;
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+    }
+    
+    footer p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    
+    footer a {
+      color: #aaa;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    footer a:hover {
+      color: var(--primary);
+    }
+    
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.6rem;
+    }
+    
+    .footer-social a {
+      display: inline-flex;
+      width: 40px;
+      height: 40px;
+      background: #222;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      margin-right: 0.5rem;
+      transition: all 0.3s;
+    }
+    
+    .footer-social a:hover {
+      background: var(--primary);
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid #222;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    
+    /* ========== BACK TO TOP ========== */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 45px;
+      height: 45px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+      z-index: 999;
+      box-shadow: 0 4px 15px rgba(232, 93, 4, 0.4);
+    }
+    
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+    
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Responsive */
+    @media (max-width: 991px) {
+      .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 120px 0 80px;
+      }
+      
+      .stats-bar {
+        margin-top: 0;
+        border-radius: 0;
+      }
+      
+      .stat-item {
+        margin-bottom: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="80">
+
+  <!-- ========== NAVBAR ========== -->
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">CIN<span>STRUCTION</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-quote" href="#contact">Get a Quote</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="bi bi-award me-1"></i> 20+ YEARS OF EXCELLENCE</div>
+        <h1>Supriya adsule <br>That <span>Last Forever</span></h1>
+        <p>Cinstruction is a trusted general contractor delivering high-quality residential, commercial, and industrial projects — on schedule, on budget, and built to last.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn btn-primary-custom">Request a Quote</a>
+          <a href="#projects" class="btn btn-outline-custom">View Our Work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STATS ========== -->
+  <div class="container">
+    <div class="stats-bar">
+      <div class="row g-0">
+        <div class="col-6 col-md-3">
+          <div class="stat-item">
+            <h3 class="counter" data-target="450">0</h3>
+            <p>Projects Completed</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-item">
+            <h3 class="counter" data-target="20">0</h3>
+            <p>Years Experience</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-item">
+            <h3 class="counter" data-target="98">0</h3>
+            <p>% Client Satisfaction</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-item">
+            <h3 class="counter" data-target="85">0</h3>
+            <p>Expert Team Members</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div class="about-img">
+            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80" alt="Construction site">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="about-content">
+            <h3>Building Trust Since 2005</h3>
+            <p>Cinstruction is a full-service construction company dedicated to delivering exceptional results. From custom homes to large-scale commercial developments, we bring skill, integrity, and innovation to every project.</p>
+            <p>Our experienced team works closely with clients to turn visions into reality while maintaining the highest standards of quality, safety, and craftsmanship.</p>
+            <ul class="feature-list">
+              <li><i class="bi bi-check-circle-fill"></i> Licensed, Bonded & Insured</li>
+              <li><i class="bi bi-check-circle-fill"></i> Fixed-Price Bidding — No Surprises</li>
+              <li><i class="bi bi-check-circle-fill"></i> Strict Safety Protocols</li>
+              <li><i class="bi bi-check-circle-fill"></i> On-Time & On-Budget Delivery</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary-custom mt-3">Work With Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES ========== -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Services</h2>
+        <p>Comprehensive construction solutions tailored to your needs — from concept to completion.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-house-door"></i></div>
+            <h4>Residential Construction</h4>
+            <p>Custom homes, renovations, and extensions built with precision and attention to every detail your family deserves.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-building"></i></div>
+            <h4>Commercial Buildings</h4>
+            <p>Offices, retail spaces, and mixed-use developments designed for functionality, aesthetics, and long-term value.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-gear-wide-connected"></i></div>
+            <h4>Industrial Projects</h4>
+            <p>Warehouses, factories, and industrial facilities engineered for efficiency, durability, and operational excellence.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-tools"></i></div>
+            <h4>Renovations & Remodeling</h4>
+            <p>Transform existing spaces with modern upgrades, structural improvements, and beautiful finishes.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-pencil-square"></i></div>
+            <h4>Design & Build</h4>
+            <p>End-to-end service from architectural design through construction — one team, one vision, seamless execution.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-clipboard-check"></i></div>
+            <h4>Project Management</h4>
+            <p>Expert coordination of timelines, budgets, subcontractors, and quality control for stress-free delivery.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-title">
+        <h2>Featured Projects</h2>
+        <p>A selection of our recent work showcasing quality craftsmanship and diverse expertise.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Modern House">
+            <div class="project-overlay">
+              <h5>Modern Family Residence</h5>
+              <span>Residential • 2025</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80" alt="Office Building">
+            <div class="project-overlay">
+              <h5>Skyline Office Tower</h5>
+              <span>Commercial • 2024</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Construction">
+            <div class="project-overlay">
+              <h5>Industrial Warehouse</h5>
+              <span>Industrial • 2024</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Luxury Home">
+            <div class="project-overlay">
+              <h5>Luxury Villa Renovation</h5>
+              <span>Residential • 2025</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Retail Space">
+            <div class="project-overlay">
+              <h5>Retail Complex</h5>
+              <span>Commercial • 2023</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80" alt="Bridge">
+            <div class="project-overlay">
+              <h5>Infrastructure Upgrade</h5>
+              <span>Civil • 2023</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHY US ========== -->
+  <section class="why-us">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Choose Cinstruction</h2>
+        <p>What sets us apart in the competitive construction industry.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="why-card">
+            <div class="why-icon"><i class="bi bi-shield-check"></i></div>
+            <h4>Safety First</h4>
+            <p>Zero-compromise safety standards and industry-leading training for every crew member.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="why-card">
+            <div class="why-icon"><i class="bi bi-clock-history"></i></div>
+            <h4>On-Time Delivery</h4>
+            <p>Proven track record of completing projects within agreed timelines without cutting corners.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="why-card">
+            <div class="why-icon"><i class="bi bi-cash-stack"></i></div>
+            <h4>Transparent Pricing</h4>
+            <p>Fixed-price contracts with clear scope — no hidden costs or last-minute surprises.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="why-card">
+            <div class="why-icon"><i class="bi bi-award"></i></div>
+            <h4>Quality Craftsmanship</h4>
+            <p>Skilled tradespeople and rigorous quality control at every stage of construction.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TEAM ========== -->
+  <section id="team">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Leadership</h2>
+        <p>Meet the experienced professionals guiding every project to success.</p>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-6 col-lg-3">
+          <div class="team-card">
+            <div class="team-img">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="CEO">
+            </div>
+            <div class="team-info">
+              <h5>James Carter</h5>
+              <span>Founder & CEO</span>
+              <div class="team-social">
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="team-card">
+            <div class="team-img">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Project Director">
+            </div>
+            <div class="team-info">
+              <h5>Sarah Mitchell</h5>
+              <span>Project Director</span>
+              <div class="team-social">
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="team-card">
+            <div class="team-img">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80" alt="Site Manager">
+            </div>
+            <div class="team-info">
+              <h5>Michael Torres</h5>
+              <span>Site Operations</span>
+              <div class="team-social">
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="team-card">
+            <div class="team-img">
+              <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="Architect">
+            </div>
+            <div class="team-info">
+              <h5>Emily Chen</h5>
+              <span>Lead Architect</span>
+              <div class="team-social">
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <h2>Client Reviews</h2>
+        <p>What our clients say about working with Cinstruction.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="testimonial-card">
+            <div class="stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p>"Cinstruction delivered our dream home exactly as planned. Professional, transparent, and the quality of workmanship exceeded our expectations."</p>
+            <div class="client-info">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" class="client-img" alt="Client">
+              <div>
+                <h6>David Reynolds</h6>
+                <small>Homeowner</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="testimonial-card">
+            <div class="stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+            <p>"They completed our 40,000 sq ft warehouse two weeks ahead of schedule. Excellent project management and communication throughout."</p>
+            <div class="client-info">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" class="client-img" alt="Client">
+              <div>
+                <h6>Lisa Park</h6>
+                <small>Operations Director</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="testimonial-card">
+            <div class="stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-half"></i>
+            </div>
+            <p>"From design to handover, the team was responsive and detail-oriented. Our retail space looks stunning and was delivered on budget."</p>
+            <div class="client-info">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" class="client-img" alt="Client">
+              <div>
+                <h6>Robert Kim</h6>
+                <small>Business Owner</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Get In Touch</h2>
+        <p>Ready to start your next project? Reach out for a free consultation and quote.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="contact-info-box">
+            <h3>Contact Information</h3>
+            <div class="contact-item">
+              <i class="bi bi-geo-alt-fill"></i>
+              <div>
+                <h6>Office Address</h6>
+                <p>1245 Construction Way<br>Suite 300, Metro City, MC 90210</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="bi bi-telephone-fill"></i>
+              <div>
+                <h6>Phone</h6>
+                <p>+1 (555) 234-5678</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="bi bi-envelope-fill"></i>
+              <div>
+                <h6>Email</h6>
+                <p>info@cinstruction.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="bi bi-clock-fill"></i>
+              <div>
+                <h6>Working Hours</h6>
+                <p>Mon – Fri: 7:00 AM – 6:00 PM<br>Sat: By Appointment</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="contact-form">
+            <form id="quoteForm">
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Your Name *" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="email" class="form-control" placeholder="Email Address *" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="tel" class="form-control" placeholder="Phone Number">
+                </div>
+                <div class="col-md-6">
+                  <select class="form-select">
+                    <option selected disabled>Project Type</option>
+                    <option>Residential</option>
+                    <option>Commercial</option>
+                    <option>Industrial</option>
+                    <option>Renovation</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+              <textarea class="form-control" rows="5" placeholder="Tell us about your project..."></textarea>
+              <button type="submit" class="btn btn-submit">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <h5>CIN<span style="color:var(--primary)">STRUCTION</span></h5>
+          <p>Building excellence since 2005. We are committed to delivering high-quality construction projects with integrity, innovation, and unmatched craftsmanship.</p>
+          <div class="footer-social mt-3">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h5>Services</h5>
+          <ul class="footer-links">
+            <li><a href="#services">Residential</a></li>
+            <li><a href="#services">Commercial</a></li>
+            <li><a href="#services">Industrial</a></li>
+            <li><a href="#services">Renovations</a></li>
+            <li><a href="#services">Design & Build</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h5>Newsletter</h5>
+          <p>Subscribe for project updates and industry insights.</p>
+          <form class="d-flex gap-2 mt-3">
+            <input type="email" class="form-control form-control-sm" placeholder="Your email">
+            <button class="btn btn-sm" style="background:var(--primary);color:#fff;white-space:nowrap;">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="mb-0">&copy; 2026 Cinstruction. All Rights Reserved. | Designed with care for quality builds.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Back to top button
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Counter animation
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200;
+    let counted = false;
+
+    function animateCounters() {
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const increment = target / speed;
+        
+        const updateCount = () => {
+          const count = +counter.innerText;
+          if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 20);
+          } else {
+            counter.innerText = target + (target === 98 ? '%' : '+');
+          }
+        };
+        updateCount();
+      });
+    }
+
+    // Trigger counter when stats bar is in view
+    const statsBar = document.querySelector('.stats-bar');
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && !counted) {
+        counted = true;
+        animateCounters();
+      }
+    }, { threshold: 0.5 });
+    
+    if (statsBar) observer.observe(statsBar);
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Form submission
+    document.getElementById('quoteForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you! Your message has been sent. We will contact you shortly.');
+      this.reset();
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.nav-link, .btn-quote').forEach(link => {
+      link.addEventListener('click', () => {
+        const menu = document.getElementById('navMenu');
+        if (menu.classList.contains('show')) {
+          bootstrap.Collapse.getInstance(menu).hide();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
